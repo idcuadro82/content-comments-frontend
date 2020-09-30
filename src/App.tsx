@@ -1,11 +1,7 @@
 import React from 'react';
 
-const App = () => {
-  return (
-    <div className="document">
-      Welcome to Application
-    </div>
-  )
-}
+const App = (): any => {
+  return <div className="document">Welcome to Application 2</div>;
+};
 
 export default App;
