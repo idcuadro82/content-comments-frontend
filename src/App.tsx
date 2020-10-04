@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+import Book from './components/Book/Book';
+import './App.css';
 
-const App = (): any => {
+const App: FunctionComponent = () => {
   return (
-    <div className="document">
-      <h1>Welcome to Application</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/book1">
+          <Book volume="1" />
+        </Route>
+        <Redirect exact from="/" to="/book1" />
+      </Switch>
+    </Router>
   );
 };
 

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageWrapperView> Render <PageWrapperView> 1`] = `
+<div>
+  <div
+    class="document"
+  >
+    <div
+      class="document-content"
+    >
+      <h1
+        data-testid="page-wrapper"
+      >
+        Book 1
+      </h1>
+    </div>
+  </div>
+</div>
+`;
