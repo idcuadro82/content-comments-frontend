@@ -1,4 +1,5 @@
 {
+	"compileOnSave": false,
 	"compilerOptions": {
 		"target": "esnext",
 		"outDir": "./dist/",
@@ -17,6 +18,9 @@
 			"es2017.object",
 			"dom"
 		],
+		"typeRoots": [
+      "node_modules/@types"
+    ],
 		"module": "es6",
 		"removeComments": true,
 		"alwaysStrict": true,
@@ -28,6 +32,10 @@
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
 		"forceConsistentCasingInFileNames": true,
-		"importHelpers": true
+		"importHelpers": true,
+		"paths": {
+			"@components/*": ["/components/*"],
+			"@css/*": ["/css/*"]
+    }
   }
 }

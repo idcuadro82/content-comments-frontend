@@ -15,6 +15,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'error',
+    'ordered-imports': false,
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-var-requires': 0
   },
