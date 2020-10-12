@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
-import './PageWrapperView.css';
+import './PageWrapperView.scss';
 
 const PageWrapperView: FunctionComponent = ({ children }) => {
   return (

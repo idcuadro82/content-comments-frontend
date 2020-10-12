@@ -6,7 +6,6 @@ import {
   Switch
 } from 'react-router-dom';
 import Book from './components/Book/Book';
-import './App.css';
 
 const App: FunctionComponent = () => {
   return (

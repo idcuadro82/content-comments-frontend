@@ -1,0 +1,23 @@
+@import 'src/styles/colors';
+
+.document {
+  align-items: flex-start;
+  background: $light-gray;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  &-content {
+    background-color: $white;
+    max-width: 1024px;
+    margin-top: 40px;
+    padding: 32px 24px;
+    width: 100%;
+
+    .document-block-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

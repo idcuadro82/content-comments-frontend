@@ -1,10 +1,17 @@
-/* https://github.com/Wolox/equalizer/blob/master/equalizer.css */
+/* https://github.com/Wolox/equalizer/blob/master/equalizer.scss */
+
+$equalizer-black: #333;
+$equalizer-grey: #999;
 
 * {
   box-sizing: border-box;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 h1,
@@ -21,27 +28,11 @@ a,
 button,
 select,
 textarea {
-  color: #333;
+  color: $equalizer-black;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
   margin: 0;
-}
-h1:focus,
-h2:focus,
-h3:focus,
-h4:focus,
-h5:focus,
-h6:focus,
-p:focus,
-span:focus,
-label:focus,
-input:focus,
-a:focus,
-button:focus,
-select:focus,
-textarea:focus {
-  outline: none;
 }
 
 select {
@@ -80,10 +71,12 @@ button::-moz-focus-inner {
 a {
   cursor: pointer;
   text-decoration: none;
-}
-a:focus, a:active {
-  color: #333;
-  text-decoration: none;
+
+  &:focus,
+  &:active {
+    color: $equalizer-black;
+    text-decoration: none;
+  }
 }
 
 ul,
@@ -94,7 +87,7 @@ li {
 }
 
 ::placeholder {
-  color: #999;
+  color: $equalizer-grey;
   opacity: 1;
 }
 

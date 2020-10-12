@@ -27,6 +27,8 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "axios": "^0.20.0",
+    "html-react-parser": "^0.14.0",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -57,6 +59,8 @@
     "jest": "^26.4.2",
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.13.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
     "style-loader": "^1.2.1",
     "ts-jest": "^26.4.1",
     "typescript": "^4.0.3",
@@ -66,7 +70,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css)$": "identity-obj-proxy"
+      "\\.(css|scss)$": "identity-obj-proxy"
     }
   }
 }
