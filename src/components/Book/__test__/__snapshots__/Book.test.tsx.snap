@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PageWrapperView> should be equal to snapshot 1`] = `
+exports[`<Book> should be equal to snapshot 1`] = `
 <div>
   <div
     class="document"
@@ -11,11 +11,9 @@ exports[`<PageWrapperView> should be equal to snapshot 1`] = `
       <div
         class="document-block-list"
       >
-        <h1
-          data-testid="page-wrapper"
-        >
-          Book 1
-        </h1>
+        <div
+          class="document-block-text"
+        />
       </div>
     </div>
   </div>

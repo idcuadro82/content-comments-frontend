@@ -2,8 +2,8 @@ import BookPageElementModel from './BookPageElementModel';
 import { IBookPageContentResponse } from '../../services/BookService';
 
 export class BookPageContentModel {
-  bookId?: String;
-  pageContent: String | BookPageElementModel[];
+  bookId?: string;
+  pageContent: string | BookPageElementModel[];
 
   constructor() {
     this.pageContent = '';
@@ -15,9 +15,9 @@ export class BookPageContentModel {
       page_content,
     } = bookPageContent;
 
-    this.bookId = book_id || null;
+    this.bookId = book_id;
     this.pageContent = (Array.isArray(page_content))
       ? BookPageElementModel.resolveContent(page_content)
-      : page_content;
+      : page_content || '';
   }
 }

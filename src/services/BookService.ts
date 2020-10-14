@@ -13,7 +13,7 @@ class BookService extends HttpClientBase {
     return this.instance;
   }
 
-  public getBookContent = (id: String): Promise<IBookPageContentResponse> => {
+  public getBookContent = (id: string): Promise<IBookPageContentResponse> => {
     return this.axiosInstance
       .get<{ result: IBookPageContentResponse }>(`${URL_CONFIG.getTodoList}${id}`)
       .then(response => response.data.result);
@@ -21,17 +21,17 @@ class BookService extends HttpClientBase {
 }
 
 export interface IBookPageContentResponse {
-  book_id: String;
-  page_content: String | IBookPageElementResponse[];
+  book_id: string;
+  page_content: string | IBookPageElementResponse[];
 }
 
 export interface IBookPageElementResponse {
-  id: String;
-  block_type: String;
-  content: String | IBookPageElementResponse[];
-  parent_id?: String | null;
-  position: String;
-  theme_color?: String | null;
+  id: string;
+  block_type: string;
+  content: string | IBookPageElementResponse[];
+  parent_id?: string | null;
+  position: string;
+  theme_color?: string | null;
 }
 
 export default BookService.getInstance();

@@ -12,7 +12,7 @@ const App: FunctionComponent = () => {
     <Router>
       <Switch>
         <Route path="/book1">
-          <Book volume="1" />
+          <Book idBook="4b900a74-e2d9-4837-b9a4-9e828752716e" />
         </Route>
         <Redirect exact from="/" to="/book1" />
       </Switch>

@@ -1,11 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import './PageWrapperView.scss';
 
-const PageWrapperView: FunctionComponent = ({ children }) => {
+const PageWrapperView: FC = ({ children }) => {
   return (
     <div className="document">
-      <div className="document-content">{children}</div>
+      <div className="document-content">
+        <div className="document-block-list">{children}</div>
+      </div>
     </div>
   );
 };

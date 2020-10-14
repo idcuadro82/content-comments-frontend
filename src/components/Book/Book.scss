@@ -1,0 +1,87 @@
+@import "src/styles/colors";
+@import "src/styles/constants";
+
+@function headings($from: 1, $to: 6) {
+  @if $from == $to {
+    @return "h#{$from}";
+  } @else {
+    @return "h#{$from}," + headings($from + 1, $to);
+  }
+}
+
+.document-block-item {
+  &-content {
+    #{headings(1,6)} {
+      font-weight: bold;
+      line-height: $text-line-height;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .block-type-bullet {
+      &-text {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        p {
+          font-size: 1rem;
+          line-height: $text-line-height;
+        }
+
+        &::before {
+          content: "•";
+          font-size: 1rem;
+          left: 0.75rem;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+
+    .block-type-divider {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      height: 0;
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+.color-2 {
+  .document-block-item {
+    &-content {
+      #{headings(1,6)} {
+        color: $red-wine;
+      }
+    }
+  }
+}
+
+.color-5 {
+  .document-block-item {
+    &-content {
+      #{headings(1,6)} {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.two-colums {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 40px;
+}

@@ -1,16 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App> Render <APP> 1`] = `
+exports[`<App> should be equal to snapshot with invalid route 1`] = `<div />`;
+
+exports[`<App> should be equal to snapshot with redirect to /book1 1`] = `
 <div>
-  <div
-    class="document"
-  >
-    <div
-      class="document-content"
-    >
-      Book 
-      1
-    </div>
+  <div>
+    Book 1
+  </div>
+</div>
+`;
+
+exports[`<App> should be equal to snapshot with route /book1 1`] = `
+<div>
+  <div>
+    Book 1
   </div>
 </div>
 `;

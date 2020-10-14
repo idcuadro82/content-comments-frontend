@@ -5,6 +5,13 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-    ["babel-plugin-transform-class-properties"]
-  ]
+    [
+      "babel-plugin-transform-class-properties"
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["@babel/plugin-transform-runtime"]
+    }
+  }
 }

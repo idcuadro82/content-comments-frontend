@@ -1,16 +1,17 @@
 import { IBookPageElementResponse } from '../../services/BookService';
-import pageElementTypeMap from '../utils/PageElementTypesMap';
+import PageElementTypeMap from '../utils/PageElementTypesMap';
 
 export default class BookPageElementModel {
-  id: String;
-  blockType?: String;
-  content: String | BookPageElementModel[];
-  parentId?: String | null;
-  position?: String | null;
-  themeColor?: String | null;
+  id: string;
+  blockType: string;
+  content: string | BookPageElementModel[];
+  parentId?: string | null;
+  position?: string | null;
+  themeColor?: string;
 
-  constructor(id: String) {
+  constructor(id: string) {
     this.id = id;
+    this.blockType = '';
     this.content = '';
   }
 
@@ -31,10 +32,10 @@ export default class BookPageElementModel {
       theme_color,
     } = bookElementContent;
 
-    this.blockType = pageElementTypeMap.get(block_type);
+    this.blockType = PageElementTypeMap.get(block_type);
     this.parentId = parent_id || null;
     this.position = position || null;
-    this.themeColor = theme_color || null;
-    this.content =  (Array.isArray(content)) ? BookPageElementModel.resolveContent(content) : content;
+    this.themeColor = theme_color || '';
+    this.content =  (Array.isArray(content)) ? BookPageElementModel.resolveContent(content) : content || '';
   }
 }
