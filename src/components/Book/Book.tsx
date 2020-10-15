@@ -4,7 +4,6 @@ import PageWrapperView from '../PageWrapperView/PageWrapperView';
 import BookService, { IBookPageContentResponse } from '../../services/BookService';
 import { BookPageContentModel } from '../../models/BookPageContent/BookPageContentModel';
 import BookTemplate from './BookTemplate';
-import useDataApi from '../../hooks/useDataApi';
 
 type BooksProps = {
   idBook: string;
