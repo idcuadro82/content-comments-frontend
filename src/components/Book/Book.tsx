@@ -4,6 +4,7 @@ import PageWrapperView from '../PageWrapperView/PageWrapperView';
 import BookService, { IBookPageContentResponse } from '../../services/BookService';
 import { BookPageContentModel } from '../../models/BookPageContent/BookPageContentModel';
 import BookTemplate from './BookTemplate';
+import useDataApi from '../../hooks/useDataApi';
 
 type BooksProps = {
   idBook: string;
@@ -19,7 +20,7 @@ const Book: FunctionComponent<BooksProps> = ({ idBook }): any => {
         newbookContent.mapFromResponse(bookContentResponse);
         setBookContent(newbookContent);
       })
-      .catch(error => console.error(error.message))
+      .catch(error => console.error(error.message));
   }, []);
 
   return (

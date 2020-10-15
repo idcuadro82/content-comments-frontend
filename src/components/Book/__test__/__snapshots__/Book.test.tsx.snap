@@ -12,8 +12,129 @@ exports[`<Book> should be equal to snapshot 1`] = `
         class="document-block-list"
       >
         <div
-          class="document-block-text"
-        />
+          class="document-block-item"
+          data-block-type="Content::Block::Title"
+          data-position="0"
+          data-text="01. BUILDING&nbsp;"
+          data-uuid="0d11b5e2-55ba-4852-98ad-d8f89117852c"
+        >
+          <div
+            class="document-block-item-container"
+          >
+            <div
+              class="document-block-item-content"
+            >
+              <h1
+                contenteditable="false"
+              >
+                01. BUILDING 
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="document-block-item"
+          data-block-type="Content::Block::Title"
+          data-position="1"
+          data-text="&nbsp; &nbsp; &nbsp; YOUR IDENTITY"
+          data-uuid="a06da79a-4f07-483f-b86e-11ea26cd60c4"
+        >
+          <div
+            class="document-block-item-container"
+          >
+            <div
+              class="document-block-item-content"
+            >
+              <h1
+                contenteditable="false"
+              >
+                      YOUR IDENTITY
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="document-block-item"
+          data-block-type="Content::Block::Divider"
+          data-position="3"
+          data-text=""
+          data-uuid="678e180e-cb3e-486d-8ab3-690e05641063"
+        >
+          <div
+            class="document-block-item-container"
+          >
+            <div
+              class="document-block-item-content"
+            >
+              <hr
+                class="block-type-divider"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="document-block-item"
+          data-block-type="Content::Block::BorderedContainer"
+          data-container="true"
+          data-position="4"
+          data-text=""
+          data-uuid="5c8bd374-0ee2-421d-bb3e-7a50989fc977"
+        >
+          <div
+            class="document-block-item-container"
+          >
+            <div
+              class="document-block-item-content"
+            >
+              <div
+                class="block-type-container bordered-container color-5"
+              >
+                <div
+                  class="document-block-item"
+                  data-block-type="Content::Block::TitleMedium"
+                  data-position="1"
+                  data-text="CAN DO"
+                  data-uuid="62333c8d-5a2b-4e23-83a0-358dc0d94292"
+                >
+                  <div
+                    class="document-block-item-container"
+                  >
+                    <div
+                      class="document-block-item-content"
+                    >
+                      <h2
+                        contenteditable="false"
+                      >
+                        CAN DO
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="document-block-item"
+                  data-block-type="Content::Block::TitleSmall"
+                  data-position="2"
+                  data-text="At the end of the unit you can:"
+                  data-uuid="92d68729-922b-4d63-9516-6f7df6c4e7dc"
+                >
+                  <div
+                    class="document-block-item-container"
+                  >
+                    <div
+                      class="document-block-item-content"
+                    >
+                      <h3
+                        contenteditable="false"
+                      >
+                        At the end of the unit you can:
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
