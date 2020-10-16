@@ -76,7 +76,7 @@ describe('BookPageContentModel', () => {
     expect(secondChildElement.parentId).toEqual('5c8bd374-0ee2-421d-bb3e-7a50989fc977');
     expect(secondChildElement.blockType).toEqual('Content::Block::TitleSmall');
     expect(secondChildElement.position).toEqual('2');
-    expect(secondChildElement.themeColor).toBeNull();
+    expect(secondChildElement.themeColor).toEqual('');
     expect(secondChildElement.content).toEqual('At the end of the unit you can:');
   });
 });

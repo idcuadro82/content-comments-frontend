@@ -1,23 +1,40 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Book from '../Book';
-import { mockGetBookContentResponse } from './GetBookContentResponse.mock';
+import { MOCK_GET_BOOK_CONTTENT_RESPONSE } from './GetBookContentResponse.mock';
 
 jest.mock('../../../services/BookService.ts', () => {
   return {
     getBookContent: jest.fn().mockImplementation(() => {
-      return Promise.resolve(mockGetBookContentResponse);
+      return Promise.resolve(MOCK_GET_BOOK_CONTTENT_RESPONSE);
     })
   };
 });
 
 describe('<Book>', () => {
-  it('should be equal to snapshot', async () => {
+  let container;
+
+  beforeEach(async () => {
     let wrapper;
     await act(async () => {
       wrapper = render(<Book idBook="4b900a74-e2d9-4837-b9a4-9e828752716e" />);
     });
-    expect(wrapper.container).toMatchSnapshot();
+    container = wrapper.container;
+  })
+
+  afterEach(cleanup);
+
+  it('should be equal to snapshot', () => {
+    expect(container).toMatchSnapshot();
   });
+
+  it('should have rendered content', () => {
+    const borderedContainerBlock = container.querySelector(`[data-uuid="5c8bd374-0ee2-421d-bb3e-7a50989fc977"]`);
+    expect(borderedContainerBlock).toBeTruthy();
+
+    const borderedContainerContent = borderedContainerBlock.querySelector('.bordered-container');
+    expect(borderedContainerContent).toBeTruthy();
+
+  })
 });

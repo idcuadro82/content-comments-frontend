@@ -1,4 +1,6 @@
-export const mockGetBookContentResponse = {
+import { IBookPageContentResponse } from '../../../services/BookService';
+
+export const MOCK_GET_BOOK_CONTTENT_RESPONSE: IBookPageContentResponse = {
   book_id: '4b900a74-e2d9-4837-b9a4-9e828752716e',
   page_content: [
     {
