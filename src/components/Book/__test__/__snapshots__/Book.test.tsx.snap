@@ -12,7 +12,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
         class="document-block-list"
       >
         <div
-          class="document-block-item"
+          class="document-block-item document-block-item comment-available"
           data-block-type="Content::Block::Title"
           data-position="0"
           data-text="01. BUILDING&nbsp;"
@@ -33,7 +33,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
           </div>
         </div>
         <div
-          class="document-block-item"
+          class="document-block-item document-block-item comment-available"
           data-block-type="Content::Block::Title"
           data-position="1"
           data-text="&nbsp; &nbsp; &nbsp; YOUR IDENTITY"
@@ -54,7 +54,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
           </div>
         </div>
         <div
-          class="document-block-item"
+          class="document-block-item document-block-item"
           data-block-type="Content::Block::Divider"
           data-position="3"
           data-text=""
@@ -73,7 +73,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
           </div>
         </div>
         <div
-          class="document-block-item"
+          class="document-block-item document-block-item color-5"
           data-block-type="Content::Block::BorderedContainer"
           data-container="true"
           data-position="4"
@@ -90,7 +90,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
                 class="block-type-container bordered-container color-5"
               >
                 <div
-                  class="document-block-item"
+                  class="document-block-item document-block-item comment-available"
                   data-block-type="Content::Block::TitleMedium"
                   data-position="1"
                   data-text="CAN DO"
@@ -111,7 +111,7 @@ exports[`<Book> should be equal to snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="document-block-item"
+                  class="document-block-item document-block-item comment-available"
                   data-block-type="Content::Block::TitleSmall"
                   data-position="2"
                   data-text="At the end of the unit you can:"
