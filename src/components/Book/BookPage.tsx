@@ -4,36 +4,22 @@ import BookPageElementModel from '../../models/BookPageContent/BookPageElementMo
 import PageElementTypeMap, { BlockTypes } from '../../models/utils/PageElementTypesMap';
 import parse from 'html-react-parser';
 import './Book.scss';
+import BookPageBlock from './BookPageBlock';
 
-type BookTemplateProps = {
+type BookPageProps = {
   content: String | BookPageElementModel[];
 };
 
-const BookTemplate: FC<BookTemplateProps> = ({ content }) => {
-    
+const BookPage: FC<BookPageProps> = ({ content }) => {
   if ((Array.isArray(content))) {
     return (
       <>
         {
           content.map((block) => {
-            const contentProp = (Array.isArray(block.content)) ? '' : block.content;
-            const dataContainer = Array.isArray(block.content) || null;
             return (
-              <div
-                key={block.id}
-                className="document-block-item"
-                data-uuid={block.id}
-                data-position={block.position}
-                data-block-type={block.blockType}
-                data-text={contentProp}
-                data-container={dataContainer}
-              >
-                <div className="document-block-item-container">
-                  <div className="document-block-item-content">
-                    {renderBlockContent(block)}
-                  </div>
-                </div>
-              </div>
+              <BookPageBlock key={block.id} blockData={block}>
+                {renderBlockContent(block)}
+              </BookPageBlock>
             );
           })
         }
@@ -42,9 +28,9 @@ const BookTemplate: FC<BookTemplateProps> = ({ content }) => {
   }
 
   return (
-    <div className="document-block-text">
+    <BookPageBlock>
       {content}
-    </div>
+    </BookPageBlock>
   );
 }
 
@@ -58,7 +44,7 @@ const renderBlockContent = ({
     case PageElementTypeMap.get(BlockTypes.BORDERED_CONTAINER):
       return (
         <div className={`block-type-container bordered-container ${themeColor}`}>
-          <BookTemplate content={content}></BookTemplate>
+          <BookPage content={content} />
         </div>
       );
 
@@ -115,7 +101,7 @@ const renderBlockContent = ({
   }
 }
 
-BookTemplate.propTypes = {
+BookPage.propTypes = {
   content: PropTypes.oneOfType([
     PropTypes.arrayOf(
       PropTypes.instanceOf(BookPageElementModel).isRequired
@@ -124,4 +110,4 @@ BookTemplate.propTypes = {
   ]).isRequired
 }
 
-export default BookTemplate;
+export default BookPage;

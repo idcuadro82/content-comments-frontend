@@ -10,6 +10,32 @@
 }
 
 .document-block-item {
+  position: relative;
+
+  .document-block-comment::before {
+    content: "@";
+    cursor: pointer;
+    font-size: 1rem;
+    left: 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.comment-available {
+    padding-left: 30px;
+
+    &.last-element-row {
+      padding: 0;
+      padding-right: 30px;
+
+      .document-block-comment::before {
+        left: auto;
+        right: 0.75rem;
+      }
+    }
+  }
+
   &-content {
     #{headings(1,6)} {
       font-weight: bold;
@@ -81,6 +107,7 @@
 }
 
 .two-colums {
+  align-items: start;
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 40px;

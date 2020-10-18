@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PageWrapperView from '../PageWrapperView/PageWrapperView';
 import BookService, { IBookPageContentResponse } from '../../services/BookService';
 import { BookPageContentModel } from '../../models/BookPageContent/BookPageContentModel';
-import BookTemplate from './BookTemplate';
+import BookPage from './BookPage';
 
 type BooksProps = {
   idBook: string;
@@ -24,7 +24,7 @@ const Book: FunctionComponent<BooksProps> = ({ idBook }): any => {
 
   return (
     <PageWrapperView>
-      <BookTemplate content={bookContent.pageContent} />
+      <BookPage content={bookContent.pageContent} />
     </PageWrapperView>
   );
 };
