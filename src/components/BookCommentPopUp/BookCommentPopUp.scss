@@ -1,0 +1,100 @@
+@import "src/styles/colors";
+
+%comment-text-editor-after {
+  background: #fff;
+  content: "";
+  height: 10px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 10px;
+}
+
+#comment-text-editor {
+  background-color: $white;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+
+  &.left-side:after {
+    @extend %comment-text-editor-after;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    right: -6px;
+  }
+
+  &.right-side:after {
+    @extend %comment-text-editor-after;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    left: -6px;
+  }
+
+  &.up-side:after {
+    bottom: 11px;
+  }
+
+  &.down-side:after {
+    top: 11px;
+  }
+
+  .RichEditor-controls {
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+    user-select: none;
+
+    .RichEditor-styleButton {
+      color: #999;
+      cursor: pointer;
+      margin-right: 16px;
+      padding: 2px 0;
+      display: inline-block;
+    }
+
+    .RichEditor-activeButton {
+      color: #5890ff;
+    }
+  }
+
+  .DraftEditor-root {
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    font-family: "Georgia", serif;
+    font-size: 14px;
+    height: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+    resize: none;
+
+    .DraftEditor-editorContainer {
+      cursor: text;
+      height: auto;
+
+      blockquote {
+        border-left: 5px solid #eee;
+        color: #666;
+        font-family: "Hoefler Text", "Georgia", serif;
+        font-style: italic;
+        margin: 16px 0;
+        padding: 10px 20px;
+      }
+
+      .public-DraftStyleDefault-pre {
+        background-color: rgba(0, 0, 0, 0.05);
+        font-family: "Inconsolata", "Menlo", "Consolas", monospace;
+        font-size: 16px;
+        padding: 20px;
+
+        span[data-text="true"] {
+          font-family: Inconsolata;
+        }
+      }
+
+      span[data-text="true"] {
+        font-weight: inherit;
+      }
+    }
+  }
+}

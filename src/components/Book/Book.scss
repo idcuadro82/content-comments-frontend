@@ -12,16 +12,6 @@
 .document-block-item {
   position: relative;
 
-  .document-block-comment::before {
-    content: "@";
-    cursor: pointer;
-    font-size: 1rem;
-    left: 0.75rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   &.comment-available {
     padding-left: 30px;
 
@@ -29,11 +19,24 @@
       padding: 0;
       padding-right: 30px;
 
-      .document-block-comment::before {
+      .document-block-comment {
         left: auto;
         right: 0.75rem;
       }
     }
+  }
+
+  .document-block-comment {
+    left: 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .document-block-comment::before {
+    content: "@";
+    cursor: pointer;
+    font-size: 1rem;
   }
 
   &-content {

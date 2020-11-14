@@ -1,16 +1,26 @@
-import React, { FC, useRef, useState, useEffect } from 'react'
+import React, {
+  FC,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import PropTypes from 'prop-types';
 import BookPageElementModel from '../../models/BookPageContent/BookPageElementModel';
 import { isBlockExcludedComment } from '../../utils/CommentBlockTypeValidator';
+import { ButtonCommentContext } from '../PageWrapperView/PageWrapperView';
 
-interface BookPageBlockProps {
+interface IBookPageBlockProps {
   blockData?: BookPageElementModel;
   children: React.ReactNode;
 }
 
-const BookPageBlock: FC<BookPageBlockProps> = ({ blockData, children }) => {
+const BookPageBlock: FC<IBookPageBlockProps> = ({ blockData, children }) => {
   let [isHover, setIsHover] = useState<boolean>(false);
   let elementRef = useRef<HTMLHeadingElement>(null);
+  let buttonCommentRef = useRef<HTMLHeadingElement>(null);
+
+  const contentProp = (Array.isArray(blockData?.content)) ? '' : blockData?.content;
+  const dataContainer = Array.isArray(blockData?.content) || null;
 
   useEffect(() => {
     elementRef.current?.addEventListener('mouseover', e => {
@@ -29,26 +39,42 @@ const BookPageBlock: FC<BookPageBlockProps> = ({ blockData, children }) => {
     }
   }, []);
 
-  const validCommentBlock = () => blockData && !isBlockExcludedComment(blockData.blockType);
-  const showCommentButton = () => validCommentBlock() && isHover;
-  const resolveComponentClass = (): string => {
+  const _validCommentBlock = () => blockData && !isBlockExcludedComment(blockData.blockType);
+
+  const _showCommentButton = () => _validCommentBlock() && isHover;
+
+  const _getButtonCommentPosition = () => {
+    return buttonCommentRef.current?.getBoundingClientRect();
+  }
+
+  const _resolveComponentClass = (): string => {
     let baseClass = 'document-block-item';
     if (blockData?.themeColor) {
       baseClass += ` ${blockData.themeColor}`
     }
-    if (validCommentBlock()) {
+    if (_validCommentBlock()) {
       baseClass += ' comment-available';
     }
-    return `document-block-item ${baseClass}`;
+    return baseClass;
   }
 
-  const contentProp = (Array.isArray(blockData?.content)) ? '' : blockData?.content;
-  const dataContainer = Array.isArray(blockData?.content) || null;
+  const _resolveButtonCommentContext = ({ commentEditorState, resolveCommentEditorParams }) => {
+    const isLast = blockData?.themeColor === 'last-element-row';
+    const wasSelected = commentEditorState.show && commentEditorState.id === blockData?.id;
+    return (
+      (_showCommentButton() || wasSelected) &&
+      <span
+        ref={buttonCommentRef}
+        className="document-block-comment"
+        onClick={() => resolveCommentEditorParams(_getButtonCommentPosition(), blockData?.id, isLast)}
+      />
+    )
+  }
 
   return (
     <div
       key={blockData?.id}
-      className={resolveComponentClass()}
+      className={_resolveComponentClass()}
       data-uuid={blockData?.id}
       data-position={blockData?.position}
       data-block-type={blockData?.blockType}
@@ -56,7 +82,9 @@ const BookPageBlock: FC<BookPageBlockProps> = ({ blockData, children }) => {
       data-container={dataContainer}
       ref={elementRef}>
       {
-        showCommentButton() && <span className="document-block-comment" />
+        <ButtonCommentContext.Consumer>
+          {_resolveButtonCommentContext}
+        </ButtonCommentContext.Consumer>
       }
       <div className="document-block-item-container">
         <div className="document-block-item-content">

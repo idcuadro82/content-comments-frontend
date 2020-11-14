@@ -1,4 +1,4 @@
-@import 'src/styles/colors';
+@import "src/styles/colors";
 
 .document {
   align-items: flex-start;
@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
   width: 100%;
 
   &-content {
